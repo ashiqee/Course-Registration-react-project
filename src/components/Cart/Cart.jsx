@@ -1,6 +1,6 @@
 const Cart = () => {
   return (
-    <div className="bg-white shadow-xl rounded-lg p-6">
+    <div className="bg-white shadow-xl rounded-lg p-6 md:w-80">
       <div>
         <h2 className="text-xl font-semibold text-blue-500 border-b-2 pb-4">
           Credit Hour Remaining<span> 7 </span> hr
