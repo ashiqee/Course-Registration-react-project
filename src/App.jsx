@@ -1,4 +1,7 @@
 import "./App.css";
+import { ToastContainer, toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
 import Header from "./components/Header/Header";
 import Courses from "./components/Course_cards/Courses";
 import Carts from "./components/Carts/Carts";
@@ -9,6 +12,9 @@ function App() {
   const [remaining, setRemaining] = useState(0);
   const [totalHour, setTotalHour] = useState(0);
   const [totalCost, setTotalCost] = useState(0);
+  const notify = () => toast.error("This Course Already Enrolled!");
+  const notify2 = () => toast.warn("Hour Limit is Over!");
+  const notify3 = () => toast.success("Course Enroll Success!!!");
 
   const handleAddToCart = (course) => {
     const isExist = carts.find((courseList) => courseList.id == course.id);
@@ -17,7 +23,8 @@ function App() {
     let totalCourseCost = course.price;
 
     if (isExist) {
-      return alert("already added"); // addd kortee Hobe
+      return notify();
+      // return alert("already added"); // addd kortee Hobe
     } else {
       carts.forEach((cItem) => {
         creditHour = creditHour + cItem.credit;
@@ -26,13 +33,14 @@ function App() {
       const remaining = totalCreditHour - creditHour;
 
       if (creditHour > totalCreditHour) {
-        return alert("Hour Limit Sesh");
+        return notify2();
       } else {
         setRemaining(remaining);
         setTotalHour(creditHour);
         setTotalCost(totalCourseCost);
         const newCarts = [...carts, course];
         setCarts(newCarts);
+        return notify3();
       }
     }
   };
@@ -54,6 +62,7 @@ function App() {
           />
         </div>
       </div>
+      <ToastContainer />
     </>
   );
 }
