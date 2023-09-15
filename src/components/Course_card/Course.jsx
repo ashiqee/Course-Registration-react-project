@@ -1,3 +1,4 @@
+import { LuDollarSign, LuBookOpen } from "react-icons/Lu";
 const Course = ({ course, handleAddToCart }) => {
   const { id, img, title, description, price, credit } = course;
   return (
@@ -10,8 +11,18 @@ const Course = ({ course, handleAddToCart }) => {
           <h2 className="card-title py-4">{title}</h2>
           <p className="text-gray-400">{description}</p>
           <div className="my-4 flex justify-between text-gray-400 text-xl">
-            <div>$ Price {price}</div>
-            <div>Credit: {credit} hr</div>
+            <div className="flex items-center">
+              <span className="text-black text-2xl">
+                <LuDollarSign />
+              </span>{" "}
+              Price {price}
+            </div>
+            <div className="flex items-center gap-1">
+              <span className="text-black text-2xl">
+                <LuBookOpen />
+              </span>
+              Credit: {credit} hr
+            </div>
           </div>
 
           <div className="card-actions justify-center">
