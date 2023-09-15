@@ -1,5 +1,5 @@
-const Course = ({ course }) => {
-  const { img, title, description, price, credit } = course;
+const Course = ({ course, handleAddToCart }) => {
+  const { id, img, title, description, price, credit } = course;
   return (
     <div>
       <div className="card w-full bg-white shadow-xl p-4">
@@ -15,7 +15,9 @@ const Course = ({ course }) => {
           </div>
 
           <div className="card-actions justify-center">
-            <button className="p-3 w-full bg-blue-400 rounded-xl text-xl text-white font-semibold ">
+            <button
+              onClick={() => handleAddToCart(course)}
+              className="p-3 w-full bg-blue-400 rounded-xl text-xl text-white font-semibold ">
               Select
             </button>
           </div>
