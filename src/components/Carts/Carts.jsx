@@ -1,5 +1,3 @@
-import Cart from "../Cart/cart";
-
 const Carts = ({ carts, remaining, totalHour, totalCost }) => {
   return (
     <div className="bg-white shadow-xl rounded-lg p-6 md:w-80">
@@ -9,10 +7,15 @@ const Carts = ({ carts, remaining, totalHour, totalCost }) => {
         </h2>
         <h3 className="py-4 text-2xl font-bold">Course Name</h3>
 
-        <div className="border-b-2">
-          {carts.map((cart, idx) => (
-            <Cart key={idx} cart={cart} />
-          ))}
+        <div className="border-b-2 text-gray-400  pb-4">
+          {carts.map((cart, index) => {
+            return (
+              <p key={index}>
+                <span>{index + 1} </span>
+                {cart.title}- {cart.credit}hr
+              </p>
+            );
+          })}
         </div>
         <h3 className="py-4 text-lg font-bold border-b-2">
           Total Credit Hour:{totalHour}
