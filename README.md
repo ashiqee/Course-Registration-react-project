@@ -4,9 +4,9 @@ Questions: Add at least 3 Project features?
 
 Answer:
 
-Markup: \* Create JSON Data Array in object.with (Img, Title, Description ,price,credit hr, and btn)
+- Create JSON Data Array in object.with (Img, Title, Description ,price,credit hr, and btn)
 
-\*All Course view in display Dynamically by use useEffect Fetch all data set in Courses display.
+- All Course view in display Dynamically by use useEffect Fetch all data set in Courses display.
 
 - All Courses has select button then Event Listener handle all data price , credit hour and course name . Add into carts with condition pass. One course call one time then add credit hour check with reaming highest course hour 20. if all condition pass show toast by notification .
 
