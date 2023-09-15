@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const Carts = ({ carts, remaining, totalHour, totalCost }) => {
   return (
     <div className="bg-white shadow-xl rounded-lg p-6 md:w-80">
@@ -24,6 +26,13 @@ const Carts = ({ carts, remaining, totalHour, totalCost }) => {
       <h3 className="py-4 text-lg font-bold">Total Cost: {totalCost} USD</h3>
     </div>
   );
+};
+
+Carts.propTypes = {
+  carts: PropTypes.object,
+  remaining: PropTypes.number,
+  totalHour: PropTypes.number,
+  totalCost: PropTypes.number,
 };
 
 export default Carts;

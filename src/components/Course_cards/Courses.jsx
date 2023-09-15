@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useState } from "react";
 import Course from "../Course_card/Course";
 import { useEffect } from "react";
@@ -24,6 +25,10 @@ const Courses = ({ handleAddToCart }) => {
       </div>
     </div>
   );
+};
+
+Courses.propTypes = {
+  handleAddToCart: PropTypes.func,
 };
 
 export default Courses;

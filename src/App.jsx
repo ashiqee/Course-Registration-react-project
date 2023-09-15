@@ -24,7 +24,6 @@ function App() {
 
     if (isExist) {
       return notify();
-      // return alert("already added"); // addd kortee Hobe
     } else {
       carts.forEach((cItem) => {
         creditHour = creditHour + cItem.credit;

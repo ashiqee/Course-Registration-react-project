@@ -1,6 +1,7 @@
+import PropTypes from "prop-types";
 import { LuDollarSign, LuBookOpen } from "react-icons/Lu";
 const Course = ({ course, handleAddToCart }) => {
-  const { id, img, title, description, price, credit } = course;
+  const { img, title, description, price, credit } = course;
   return (
     <div>
       <div className="card w-full bg-white shadow-xl p-4">
@@ -36,6 +37,11 @@ const Course = ({ course, handleAddToCart }) => {
       </div>
     </div>
   );
+};
+
+Course.propTypes = {
+  course: PropTypes.object,
+  handleAddToCart: PropTypes.func,
 };
 
 export default Course;
